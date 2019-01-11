@@ -166,6 +166,14 @@
           <span>{{ $t('menu.extra') }}</span>
         </span>
       </sidebar-link>
+      <sidebar-link
+        :to="{ name: 'extra' }">
+        <span slot="title">
+          <span
+            class="sidebar-menu-item-icon vuestic-icon vuestic-icon-view"></span>
+          <span>Pokus</span>
+        </span>
+      </sidebar-link>
       <sidebar-link-group>
         <span slot="title">
           <span
