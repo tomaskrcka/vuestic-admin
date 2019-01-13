@@ -2,11 +2,11 @@
   <div class="vuestic-data-table table-responsive"
        :class="{'data-loading': loading}">
     <div class="d-flex flex-md-row flex-column align-items-center" :class="controlsAlignmentClass">
-      <filter-bar
+      <!-- <filter-bar
         @filter="onFilterSet"
         :label="filterInputLabel"
         v-show="filterInputShown"
-      />
+      /> -->
       <div class="datatable-controls d-flex flex-row">
         <div class="form-group">
           <slot name="additionalTableControl"></slot>
@@ -37,9 +37,9 @@
       :httpFetch="httpFetch"
       :httpOptions="httpOptions"
       :fields="tableFields"
-      :dataManager="dataManager"
       :css="css.table"
-      dataPath="data"
+      dataPath="content"
+      :dataManager="dataManager"
       :paginationPath="paginationPathComputed"
       :appendParams="moreParams"
       :perPage="perPage"
@@ -95,7 +95,7 @@ export default {
     },
     filterQuery: {
       type: String,
-      default: 'filter'
+      default: 'userCode'
     },
     tableFields: {
       type: Array,
@@ -281,6 +281,29 @@ export default {
         pagination: pagination,
         data: data.slice(pagination.from - 1, pagination.to)
       }
+    },
+    transform: function (data) {
+      var transformed = {}
+
+      transformed.pageable = {
+        total: data.totalPages,
+        per_page: data.size,
+        current_page: data.number + 1,
+        last_page: data.totalPages,
+        from: 0,
+        to: data.totalPages
+      }
+
+      transformed.content = data.content
+
+      return transformed
+    },
+    getSortParam: function (sortOrder) {
+      return sortOrder.map(function (sort) {
+        let res = ''
+        res = sort.field + ',' + sort.direction
+        return decodeURI(res)
+      }).join(',')
     },
     onLoading () {
       this.noDataTemplate = ''

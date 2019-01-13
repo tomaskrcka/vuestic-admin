@@ -167,11 +167,11 @@
         </span>
       </sidebar-link>
       <sidebar-link
-        :to="{ name: 'extra' }">
+        :to="{ name: 'users' }">
         <span slot="title">
           <span
-            class="sidebar-menu-item-icon vuestic-icon vuestic-icon-view"></span>
-          <span>Pokus</span>
+            class="sidebar-menu-item-icon vuestic-icon vuestic-icon-user"></span>
+          <span>{{ $t('menu.users') }}</span>
         </span>
       </sidebar-link>
       <sidebar-link-group>

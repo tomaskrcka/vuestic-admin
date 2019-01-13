@@ -7,31 +7,26 @@ export default {
       width: '4%'
     },
     {
-      name: 'name',
-      sortField: 'name',
-      width: '24%'
+      title: 'Už. číslo',
+      name: 'userid',
+      sortField: 'userid'
     },
     {
-      name: 'email',
-      sortField: 'email',
-      width: '24%'
+      title: 'Jméno',
+      name: 'firstname'
     },
     {
-      name: 'address.line2',
-      title: 'city',
-      width: '24%'
+      title: 'Příjmení',
+      name: 'surname'
     },
     {
-      name: 'salary',
-      title: 'score',
-      width: '24%'
+      name: 'active',
+      title: 'Aktivní',
+      callback: 'trueLabel'
     }
   ],
   sortFunctions: {
-    'name': function (item1, item2) {
-      return item1 >= item2 ? 1 : -1
-    },
-    'email': function (item1, item2) {
+    'userid': function (item1, item2) {
       return item1 >= item2 ? 1 : -1
     }
   }

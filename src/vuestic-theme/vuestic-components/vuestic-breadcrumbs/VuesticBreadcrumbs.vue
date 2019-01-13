@@ -15,6 +15,7 @@
         {{ $t(item.displayName) }}
       </router-link>
     </div>
+    <!--
     <div class="vuestic-breadcrumbs__help-section">
       <a
         target="_blank"
@@ -24,6 +25,7 @@
         <span class="vuestic-icon vuestic-icon-files"></span>
       </a>
     </div>
+    -->
   </div>
 </template>
 

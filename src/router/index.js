@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import AppLayout from '../components/admin/AppLayout'
 import AuthLayout from '../components/auth/AuthLayout'
 import lazyLoading from './lazyLoading'
-import lazyLoadingViews from './lazyLoadingViews'
+// import lazyLoadingViews from './lazyLoadingViews'
 
 Vue.use(Router)
 
@@ -142,7 +142,7 @@ export default new Router({
         {
           name: 'users',
           path: 'users',
-          component: lazyLoadingViews('users/User')
+          component: lazyLoading('pages/users/User')
         },
         {
           name: 'tables',
