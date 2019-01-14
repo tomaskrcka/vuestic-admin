@@ -2,6 +2,8 @@
   <div class="row">
       <div class="col-md-12">
         <vuestic-widget :headerText="$t('tables.advanced')">
+        <div class="row">
+        <div class="col-md-6">
           <fieldset>
                 <div class="form-group">
                   <div class="input-group">
@@ -11,8 +13,8 @@
                 </div>
                 <div class="form-group">
                   <div class="input-group">
-                    <input id="toast-duration" type="number" v-model="toastDuration" required/>
-                    <label class="control-label" for="toast-duration">{{'notificationsPage.toasts.durationLabel' | translate}}</label><i class="bar"></i>
+                    <input id="filter-userid" type="number" v-model="toastDuration" required/>
+                    <label class="control-label" for="toast-duration">Uživatelské číslo</label><i class="bar"></i>
                   </div>
                 </div>
                 <div class="form-group">
@@ -29,9 +31,11 @@
                     v-model="isToastFullWidth"/>
                 </div>
                 <button slot="trigger" class="btn btn-sm btn-primary" @click="launchToast">
-                  {{'notificationsPage.toasts.launchToast' | translate}}
+                  Filter
                 </button>
               </fieldset>
+              </div>
+              </div>
           <vuestic-data-table
             :apiUrl="apiUrl"
             :tableFields="tableFields"
@@ -49,7 +53,7 @@
               color="#4ae387"
             />
           </vuestic-data-table>
-        </vuestic-widget>
+          </vuestic-widget>
       </div>
   </div>
 </template>
