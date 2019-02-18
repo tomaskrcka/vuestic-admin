@@ -57,7 +57,7 @@ export default {
       return item1 >= item2 ? 1 : -1
     }
   },
-  callbacks: {
+  methods: {
     gender: function (value) {
       return value === 'true' ? 'Male' : 'Female'
     }

@@ -1,10 +1,5 @@
 <template>
-  <div class="made-by-component">
-    <span>
-        ©2018. Made by
-        <a href="https://epicmax.co">Epicmax</a>
-    </span>
-  </div>
+<p></p>
 </template>
 
 <script>
